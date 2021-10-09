@@ -13,8 +13,8 @@ app.get('/movies', (req, res) =>{
 
 });
 
-app.get('/movies-details', (req, res) => {
-    res.render('movies-details');
+app.get('/movie-details', (req, res) => {
+    res.render('movie-details');
 })
 
 app.get('/movies/add', (req, res) => {
@@ -24,7 +24,7 @@ app.get('/movies/add', (req, res) => {
 app.get('/movies/:id', (req, res) => {
     const id = req.params.id;
     // res.send(`film numéro ${id}`);
-    res.render('movie-details', {movieid = id });
+    res.render('movie-details', {movieid : id });
 });
 
 
