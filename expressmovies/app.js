@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
 const PORT = 3000 ; 
 
 app.use( express.static(__dirname+"public"));
+app.use(bodyParser.urlencoded({ extended : false}));
+
 app.set('views', './views');
 app.set('view engine', 'ejs');
+
+app.post('/movies',(req,res) => {
+    console.log(req.body);
+    res.sendStatus(201);
+})
 
 app.get('/movies', (req, res) =>{
     // res.send('Bientôt des films ici même !');
